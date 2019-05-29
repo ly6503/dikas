@@ -1,6 +1,5 @@
 package vip.pryun.dikas.common.util.bean;
 
-
 import vip.pryun.dikas.common.object.UnifyUser;
 import vip.pryun.dikas.domain.BaseBean;
 

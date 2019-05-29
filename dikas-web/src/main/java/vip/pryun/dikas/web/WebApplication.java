@@ -19,7 +19,7 @@ import java.util.Arrays;
         "vip.pryun.dikas.web.conf",
         "vip.pryun.dikas.service.biz.impl",
 } )
-@MapperScan(basePackages = "vip.pryun.dikas.dao")
+@MapperScan(basePackages = "vip.pryun.dikas.persistence.dao")
 @EnableAspectJAutoProxy(exposeProxy = true)
 public class WebApplication {
     private static final Logger LOG = LoggerFactory.getLogger(WebApplication.class);

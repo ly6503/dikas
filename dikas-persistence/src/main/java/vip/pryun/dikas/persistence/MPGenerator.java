@@ -75,7 +75,7 @@ public class MPGenerator {
         pc.setXml("mappers");
         pc.setService("service.biz");
         pc.setServiceImpl("service.biz.impl");
-        pc.setController("web.api.controller");
+        pc.setController("web.controller");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
