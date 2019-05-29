@@ -5,7 +5,7 @@ import vip.pryun.dikas.domain.CompanyAbstractBean;
 
 /**
  * <p>
- * 服务类
+ * 公司简介 服务类
  * </p>
  *
  * @author 7yan1h

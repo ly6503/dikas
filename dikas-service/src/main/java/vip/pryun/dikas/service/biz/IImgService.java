@@ -5,7 +5,7 @@ import vip.pryun.dikas.domain.ImgBean;
 
 /**
  * <p>
- * 服务类
+ * 图片 服务类
  * </p>
  *
  * @author 7yan1h

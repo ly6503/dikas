@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- *
+ * 发展历程
  * </p>
  *
  * @author 7yan1h
@@ -34,7 +34,6 @@ public class DevelopHistoryBean extends BaseBean {
     public void setActionDt(LocalDateTime actionDt) {
         this.actionDt = actionDt;
     }
-
     public String getContent() {
         return content;
     }

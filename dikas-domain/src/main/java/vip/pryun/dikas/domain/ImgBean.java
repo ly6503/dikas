@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
  * <p>
- *
+ * 图片
  * </p>
  *
  * @author 7yan1h
@@ -37,7 +37,6 @@ public class ImgBean extends BaseBean {
     public void setType(Integer type) {
         this.type = type;
     }
-
     public Integer getRefId() {
         return refId;
     }
@@ -45,7 +44,6 @@ public class ImgBean extends BaseBean {
     public void setRefId(Integer refId) {
         this.refId = refId;
     }
-
     public String getUrl() {
         return url;
     }

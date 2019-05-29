@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
  * <p>
- *
+ * 公司简介
  * </p>
  *
  * @author 7yan1h

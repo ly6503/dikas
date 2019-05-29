@@ -115,7 +115,7 @@ public class MPGenerator {
         strategy.setSuperEntityClass("vip.pryun.dikas.domain.BaseBean");
         strategy.setEntityLombokModel(false);
         strategy.setRestControllerStyle(true);
-        strategy.setSuperControllerClass("vip.pryun.dikas.web.api.controller.BaseController");
+        strategy.setSuperControllerClass("vip.pryun.dikas.web.controller.BaseController");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         String[] columns = {"id", "deleted", "entry_id", "entry_name", "entry_dt", "update_id", "update_name", "update_dt"};
         strategy.setSuperEntityColumns(columns);

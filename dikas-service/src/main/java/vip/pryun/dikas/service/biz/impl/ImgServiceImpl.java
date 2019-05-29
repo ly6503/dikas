@@ -8,7 +8,7 @@ import vip.pryun.dikas.service.biz.IImgService;
 
 /**
  * <p>
- * 服务实现类
+ * 图片 服务实现类
  * </p>
  *
  * @author 7yan1h

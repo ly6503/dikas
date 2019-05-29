@@ -8,7 +8,7 @@ import vip.pryun.dikas.service.biz.IDevelopHistoryService;
 
 /**
  * <p>
- * 服务实现类
+ * 发展历程 服务实现类
  * </p>
  *
  * @author 7yan1h

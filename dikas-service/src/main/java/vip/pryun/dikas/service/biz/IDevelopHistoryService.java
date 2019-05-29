@@ -5,7 +5,7 @@ import vip.pryun.dikas.domain.DevelopHistoryBean;
 
 /**
  * <p>
- * 服务类
+ * 发展历程 服务类
  * </p>
  *
  * @author 7yan1h

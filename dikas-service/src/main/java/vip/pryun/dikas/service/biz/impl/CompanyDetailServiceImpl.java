@@ -8,7 +8,7 @@ import vip.pryun.dikas.service.biz.ICompanyDetailService;
 
 /**
  * <p>
- * 服务实现类
+ * 走进公司 服务实现类
  * </p>
  *
  * @author 7yan1h
