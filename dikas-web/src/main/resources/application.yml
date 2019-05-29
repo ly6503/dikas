@@ -8,9 +8,9 @@ spring:
   application:
     name: spring-boot-template
   datasource:
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT&&allowPublicKeyRetrieval=true
-    username: root
-    password: Hx123456!
+    url: jdbc:mysql://pryun.vip:3306/dikas?useUnicode=true&&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT&&allowPublicKeyRetrieval=true
+    username: dikas
+    password: 12345678
     druid:
       filters: stat,wall
       maxActive: 10
