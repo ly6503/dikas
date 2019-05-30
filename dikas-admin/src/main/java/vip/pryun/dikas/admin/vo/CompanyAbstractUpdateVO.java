@@ -20,7 +20,7 @@ public class CompanyAbstractUpdateVO implements Serializable {
      */
     @NotNull
     @Range(min = 1)
-    @ApiModelProperty("id")
+    @ApiModelProperty(value = "id", example = "1")
     private Integer id;
 
     /**

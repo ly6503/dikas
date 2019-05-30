@@ -21,7 +21,7 @@ import java.util.Map;
  * @author 59941
  * @date 2019/4/25 14:12
  */
-public class WrapperUtil {
+public class WrapperUtils {
 
     /**
      * <p>根据{@link C}类中的属性上的注解添加查询条件.</p>

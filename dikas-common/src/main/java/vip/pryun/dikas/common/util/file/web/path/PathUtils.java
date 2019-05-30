@@ -14,13 +14,13 @@ public class PathUtils {
         return new File(PathUtils.class.getResource("/").getPath()).getPath();
     }
 
-    public static String getProjectPath() {
+    public static String getProjectPath(String moduleName) {
         //return new File(getTargetDirClassPath()).getParentFile().getParentFile().getParentFile().getParentFile().getPath();
         return new File(getTargetDirClassPath()).getParentFile().getParentFile().getParentFile().getParentFile().getParentFile().getParentFile().getPath();
     }
 
-    public static String getMainJavaPath() {
-        return getProjectPath() + SEPARATOR + "src" + SEPARATOR + "main" + SEPARATOR + "java";
+    public static String getMainJavaPath(String moduleName) {
+        return getProjectPath(moduleName) + SEPARATOR + "src" + SEPARATOR + "main" + SEPARATOR + "java";
     }
 
    /* public static String getWebappPath() {
@@ -31,8 +31,8 @@ public class PathUtils {
         return new File(getTargetDirClassPath()).getParentFile().getPath();
     }*/
 
-    public static String getResourcesPath() {
-        return new File(getMainJavaPath()).getParentFile().getPath() + SEPARATOR + "resources";
+    public static String getResourcesPath(String moduleName) {
+        return new File(getMainJavaPath(moduleName)).getParentFile().getPath() + SEPARATOR + "resources";
     }
 
     /*public static String getTargetDirResourcesPath() {

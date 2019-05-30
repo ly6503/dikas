@@ -1,6 +1,7 @@
 package vip.pryun.dikas.service.biz;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.web.multipart.MultipartFile;
 import vip.pryun.dikas.domain.ImgBean;
 
 /**
@@ -13,4 +14,5 @@ import vip.pryun.dikas.domain.ImgBean;
  */
 public interface IImgService extends IService<ImgBean> {
 
+    void upload(MultipartFile file);
 }

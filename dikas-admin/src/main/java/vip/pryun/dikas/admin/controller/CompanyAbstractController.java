@@ -5,10 +5,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import vip.pryun.dikas.admin.vo.CompanyAbstractUpdateVO;
 import vip.pryun.dikas.admin.vo.CompanyAbstractVO;
 import vip.pryun.dikas.common.object.Result;
@@ -43,7 +40,7 @@ public class CompanyAbstractController extends BaseController {
 
     @PutMapping("/update")
     @ApiOperation(value = "修改公司简介")
-    public Result<Boolean> update(@Validated CompanyAbstractUpdateVO companyAbstractUpdateVO) {
+    public Result update(@Validated @RequestBody CompanyAbstractUpdateVO companyAbstractUpdateVO) {
         CompanyAbstractBean companyAbstractBean = BeanMapper.map(
                 companyAbstractUpdateVO, CompanyAbstractBean.class);
 

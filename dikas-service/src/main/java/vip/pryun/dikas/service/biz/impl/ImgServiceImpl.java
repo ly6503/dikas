@@ -2,6 +2,8 @@ package vip.pryun.dikas.service.biz.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import vip.pryun.dikas.common.util.file.web.path.PathUtils;
 import vip.pryun.dikas.domain.ImgBean;
 import vip.pryun.dikas.persistence.dao.ImgDao;
 import vip.pryun.dikas.service.biz.IImgService;
@@ -16,5 +18,10 @@ import vip.pryun.dikas.service.biz.IImgService;
  */
 @Service
 public class ImgServiceImpl extends ServiceImpl<ImgDao, ImgBean> implements IImgService {
-
+    @Override
+    public void upload(MultipartFile file) {
+        System.out.println(PathUtils.getTargetDirClassPath());
+       /* File dstFile = new File();
+        file.transferTo();*/
+    }
 }

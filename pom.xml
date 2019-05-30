@@ -24,6 +24,7 @@
         <module>dikas-service</module>
         <module>dikas-common</module>
         <module>dikas-web</module>
+        <module>dikas-file</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -83,6 +84,12 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>27.1-jre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
             </dependency>
 
         </dependencies>

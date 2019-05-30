@@ -11,7 +11,7 @@ private static final Logger logger = LogManager.getLogger(实际类名.class.get
     <Properties>
         <Property name="fileName">logger</Property>
         <!--${sys:user.dir}代表用户的当前工作目录-->
-        <Property name="fileDir">${sys:user.dir}/dikas-web-log/</Property>
+        <Property name="fileDir">${sys:user.dir}/dikas-admin-log/</Property>
     </Properties>
     <!--定义日志以哪种方式输出-->
     <appenders>
