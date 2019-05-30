@@ -11,7 +11,7 @@ private static final Logger logger = LogManager.getLogger(实际类名.class.get
     <Properties>
         <Property name="fileName">logger</Property>
         <!--${sys:user.dir}代表用户的当前工作目录-->
-        <Property name="fileDir">${sys:user.dir}/springboot-template-log/</Property>
+        <Property name="fileDir">${sys:user.dir}/dikas-log/</Property>
     </Properties>
     <!--定义日志以哪种方式输出-->
     <appenders>
@@ -52,7 +52,7 @@ private static final Logger logger = LogManager.getLogger(实际类名.class.get
              <AppenderRef ref="Console"/>
          </AsyncLogger>-->
 
-        <logger name="top.ryan1h.sb.template" level="debug" additivity="false">
+        <logger name="vip.pryun.dikas" level="debug" additivity="false">
             <!--添加对应类的输出,可以写多个<AppenderRef>,就可以输出到多个地方-->
             <AppenderRef ref="rollingFile"/>
             <AppenderRef ref="Console"/>
