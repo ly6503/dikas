@@ -1,4 +1,4 @@
-package vip.pryun.dikas.web.controller;
+package vip.pryun.dikas.admin.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-05-29
  */
 @RestController
-@RequestMapping("/web/dikas/develop-history-bean")
+@RequestMapping("/admin/dikas/develop-history-bean")
 public class DevelopHistoryController extends BaseController {
 
 }

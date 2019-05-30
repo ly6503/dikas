@@ -1,4 +1,4 @@
-package vip.pryun.dikas.web.controller;
+package vip.pryun.dikas.admin.controller;
 
 
 import io.swagger.annotations.Api;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-05-29
  */
 @RestController
-@RequestMapping("/web/dikas/company-detail-bean")
+@RequestMapping("/admin/dikas/company-detail-bean")
 @Api
 public class CompanyDetailController extends BaseController {
 

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-05-29
  */
 @RestController
-@RequestMapping("/dikas/img-bean")
+@RequestMapping("/web/dikas/img-bean")
 public class ImgController extends BaseController {
 
 }

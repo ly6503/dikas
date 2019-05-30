@@ -1,0 +1,7 @@
+spring:
+  security:
+    user:
+      name: hx
+      password: 1
+  profiles:
+    include: swagger
