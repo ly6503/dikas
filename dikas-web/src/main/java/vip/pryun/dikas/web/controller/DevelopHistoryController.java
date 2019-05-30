@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-05-29
  */
 @RestController
-@RequestMapping("/web/dikas/develop-history-bean")
+@RequestMapping("/web/develop-history")
 public class DevelopHistoryController extends BaseController {
 
 }

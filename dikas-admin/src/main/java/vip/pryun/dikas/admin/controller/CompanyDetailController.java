@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-05-29
  */
 @RestController
-@RequestMapping("/admin/dikas/company-detail-bean")
+@RequestMapping("/admin/company-detail")
 @Api
 public class CompanyDetailController extends BaseController {
 

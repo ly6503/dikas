@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- log4j2使用说明
+使用方式如下：
+private static final Logger logger = LogManager.getLogger(实际类名.class.getName());
+ -->
+
+<!--status表示是否输出log4j自身的日志,off就关闭
+ monitorInterval="300"属性的含义是每隔300秒重新读取配置文件，可以不重启应用的情况下修改配置。-->
+<configuration status="WARN">
+    <!--定义属性,方便后面引用-->
+    <Properties>
+        <Property name="fileName">logger</Property>
+        <!--${sys:user.dir}代表用户的当前工作目录-->
+        <Property name="fileDir">${sys:user.dir}/springboot-template-log/</Property>
+    </Properties>
+    <!--定义日志以哪种方式输出-->
+    <appenders>
+        <!--1.控制台输出配置-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--控制台只输出level值及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!--日志的格式,可以用[%-l]代替[%logger{36}]显示堆栈-->
+            <PatternLayout pattern="[%-d{yyyy-MM-dd HH:mm:ss,sss}] [%-5p] [%-t] [%logger{36}] %-msg%n"/>
+        </Console>
+
+        <!--2.文件输出配置-->
+        <!--filePattern:生成新文件时的文件路径和文件名格式,注意文件名不能有冒号-->
+        <RollingRandomAccessFile name="rollingFile"
+                                 fileName="${fileDir}/${fileName}.log"
+                                 filePattern="${fileDir}/$${date:yyyy-MM}/${fileName}_%d{yyyy-MM-dd}.log"><!--.log变成.log.gz代表生成压缩文件-->
+            <PatternLayout
+                    pattern="[%-d{yyyy-MM-dd HH:mm:ss,sss}] [%-5p] [%-t] [%logger{36}] %-msg%n"/>
+            <Policies>
+                <!--这个配置需要和filePattern结合使用，
+                比如上面的filePattern中配置的文件重命名规则是${fileName}-%d{yyyy-MM-dd}-%i，可以看出最小的时间粒度是dd，即天，
+                而TimeBasedTriggeringPolicy指定的size是1，结合起来就是每1天生成一个新文件。
+                如果改成%d{yyyy-MM-dd HH}，最小粒度为小时，则每一个小时生成一个文件。-->
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <!--SizeBasedTriggeringPolicy  指定当文件体积大于size指定的值时，触发Rolling-->
+                <!--<SizeBasedTriggeringPolicy size="10 MB" />-->
+            </Policies>
+            <!--DefaultRolloverStrategy  最多保存的文件个数-->
+            <!--<DefaultRolloverStrategy max="50" />-->
+        </RollingRandomAccessFile>
+    </appenders>
+
+    <Loggers>
+
+        <!--普通日志可以用异步logger,与业务有关的日志就用普通logger
+               注意一个包只能对应一个普通logger或一个异步logger-->
+        <!-- <AsyncLogger name="shop.pages.login.mapper" level="warn" additivity="false">
+             <AppenderRef ref="Console"/>
+         </AsyncLogger>-->
+
+        <logger name="top.ryan1h.sb.template" level="debug" additivity="false">
+            <!--添加对应类的输出,可以写多个<AppenderRef>,就可以输出到多个地方-->
+            <AppenderRef ref="rollingFile"/>
+            <AppenderRef ref="Console"/>
+        </logger>
+
+        <!--全局日志级别-->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="rollingFile"/>
+        </Root>
+
+    </Loggers>
+</configuration>
