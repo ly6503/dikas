@@ -4,8 +4,11 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import vip.pryun.dikas.common.mybatis.annotation.property.Equal;
+import vip.pryun.dikas.common.mybatis.annotation.property.Like;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @Author: liuyin
@@ -26,25 +29,35 @@ public class NewsVO implements Serializable {
      * 类型:1新闻  2行业动态
      */
     @ApiModelProperty(value = "类型:1新闻  2行业动态", example = "1")
+    @Equal
     private Integer type;
 
     /**
      * 标题
      */
     @ApiModelProperty("标题")
+    @Like
     private String title;
 
     /**
      * 来源
      */
     @ApiModelProperty("来源")
-    private byte[] source;
+    @Like
+    private String source;
 
     /**
      * 内容
      */
     @ApiModelProperty("内容")
+    @Like
     private String content;
+
+    /**
+     * 创建时间
+     */
+    @ApiModelProperty("创建时间")
+    private Date entryDt;
 
     public Long getId() {
         return id;
@@ -70,11 +83,11 @@ public class NewsVO implements Serializable {
         this.title = title;
     }
 
-    public byte[] getSource() {
+    public String getSource() {
         return source;
     }
 
-    public void setSource(byte[] source) {
+    public void setSource(String source) {
         this.source = source;
     }
 
@@ -84,5 +97,13 @@ public class NewsVO implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Date getEntryDt() {
+        return entryDt;
+    }
+
+    public void setEntryDt(Date entryDt) {
+        this.entryDt = entryDt;
     }
 }
