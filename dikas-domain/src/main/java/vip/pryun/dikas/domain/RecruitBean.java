@@ -10,20 +10,20 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @author cjzlx
  * @since 2019-05-29
  */
-@TableName("job")
-public class JobBean extends BaseBean {
+@TableName("recruit")
+public class RecruitBean extends BaseBean {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 职位名称
      */
-    private String jobName;
+    private String recruitName;
 
     /**
      * 职位状态（0：空缺，1不缺）
      */
-    private Integer jobStatus;
+    private Integer recruitStatus;
 
     /**
      * 年龄范围
@@ -33,7 +33,7 @@ public class JobBean extends BaseBean {
     /**
      * 性别
      */
-    private String jobGender;
+    private String genderRange;
 
     /**
      * 专业
@@ -60,22 +60,32 @@ public class JobBean extends BaseBean {
      */
     private String description;
 
-    public String getJobName() {
-        return jobName;
-    }
-
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
-    }
-    public Integer getJobStatus() {
-        return jobStatus;
-    }
-
-    public void setJobStatus(Integer jobStatus) {
-        this.jobStatus = jobStatus;
-    }
     public String getAge() {
         return age;
+    }
+
+    public String getRecruitName() {
+        return recruitName;
+    }
+
+    public void setRecruitName(String recruitName) {
+        this.recruitName = recruitName;
+    }
+
+    public Integer getRecruitStatus() {
+        return recruitStatus;
+    }
+
+    public void setRecruitStatus(Integer recruitStatus) {
+        this.recruitStatus = recruitStatus;
+    }
+
+    public String getGenderRange() {
+        return genderRange;
+    }
+
+    public void setGenderRange(String genderRange) {
+        this.genderRange = genderRange;
     }
 
     public void setAge(String age) {
@@ -117,21 +127,14 @@ public class JobBean extends BaseBean {
         this.description = description;
     }
 
-    public String getJobGender() {
-        return jobGender;
-    }
-
-    public void setJobGender(String jobGender) {
-        this.jobGender = jobGender;
-    }
 
     @Override
     public String toString() {
-        return "JobBean{" +
-                "jobName='" + jobName + '\'' +
-                ", jobStatus=" + jobStatus +
+        return "RecruitBean{" +
+                "recruitName='" + recruitName + '\'' +
+                ", recruitStatus=" + recruitStatus +
                 ", age='" + age + '\'' +
-                ", jobGender='" + jobGender + '\'' +
+                ", genderRange='" + genderRange + '\'' +
                 ", major='" + major + '\'' +
                 ", pay='" + pay + '\'' +
                 ", needNumber=" + needNumber +

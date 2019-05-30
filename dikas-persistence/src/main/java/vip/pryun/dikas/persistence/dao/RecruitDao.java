@@ -1,6 +1,6 @@
 package vip.pryun.dikas.persistence.dao;
 
-import vip.pryun.dikas.domain.JobBean;
+import vip.pryun.dikas.domain.RecruitBean;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author cjzlx
  * @since 2019-05-29
  */
-public interface JobDao extends BaseMapper<JobBean> {
+public interface RecruitDao extends BaseMapper<RecruitBean> {
 
 }
