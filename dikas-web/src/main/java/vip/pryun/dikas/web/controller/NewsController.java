@@ -7,12 +7,14 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import vip.pryun.dikas.common.mybatis.dto.QueryParam;
 import vip.pryun.dikas.common.mybatis.utils.WrapperUtils;
 import vip.pryun.dikas.common.object.Result;
 import vip.pryun.dikas.domain.NewsBean;
-import vip.pryun.dikas.domain.UserBean;
 import vip.pryun.dikas.service.biz.INewsService;
 import vip.pryun.dikas.web.vo.NewsVO;
 
@@ -34,7 +36,7 @@ public class NewsController extends BaseController {
 
     @PostMapping("/page")
     @ApiOperation(value = "新闻分页", notes = "分页和模糊查询")
-    public Result<IPage<NewsVO>> page(@RequestBody @Validated QueryParam<NewsVO> queryParam){
+    public Result<IPage<NewsVO>> page(@RequestBody @Validated QueryParam<NewsVO> queryParam) {
         QueryWrapper<NewsBean> wrapper = WrapperUtils.getWrapper(queryParam);
         IPage<NewsBean> page = newsService.page(newPage(queryParam), wrapper);
         return newResult(page, NewsVO.class);

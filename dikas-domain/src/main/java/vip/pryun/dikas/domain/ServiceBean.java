@@ -16,12 +16,12 @@ public class ServiceBean extends BaseBean {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户id
+     * 标题
      */
     private String title;
 
     /**
-     * 收藏类型:1为收藏游记,2为收藏路书,3为收藏活动
+     * 内容
      */
     private String content;
 
