@@ -1,13 +1,9 @@
 package vip.pryun.dikas.admin.vo;
 
-import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiModelProperty;
-import vip.pryun.dikas.common.mybatis.annotation.property.Equal;
-import vip.pryun.dikas.common.mybatis.annotation.property.Like;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @Author: liuyin

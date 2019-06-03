@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import vip.pryun.dikas.common.object.Result;
-import vip.pryun.dikas.domain.ServiceBean;
 import vip.pryun.dikas.service.biz.IServiceService;
 import vip.pryun.dikas.web.vo.ServiceVO;
 

@@ -49,6 +49,7 @@ public class NewsBean extends BaseBean {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getSource() {
         return source;
     }

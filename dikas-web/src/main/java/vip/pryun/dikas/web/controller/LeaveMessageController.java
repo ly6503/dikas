@@ -32,6 +32,7 @@ public class LeaveMessageController extends BaseController {
     public LeaveMessageController(ILeaveMessageService leaveMessageService) {
         this.leaveMessageService = leaveMessageService;
     }
+
     @PutMapping(value = "addMessage")
     @ApiOperation(value = "添加留言信息", notes = "添加留言信息")
     public Result addLeaveMessage(@RequestBody LeaveMessageSaveVO saveVO) {

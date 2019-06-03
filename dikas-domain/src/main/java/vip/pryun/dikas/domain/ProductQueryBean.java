@@ -69,6 +69,7 @@ public class ProductQueryBean extends BaseBean {
     public void setCompanyAddr(String companyAddr) {
         this.companyAddr = companyAddr;
     }
+
     public String getContacts() {
         return contacts;
     }
@@ -76,6 +77,7 @@ public class ProductQueryBean extends BaseBean {
     public void setContacts(String contacts) {
         this.contacts = contacts;
     }
+
     public Integer getNumber() {
         return number;
     }
@@ -83,6 +85,7 @@ public class ProductQueryBean extends BaseBean {
     public void setNumber(Integer number) {
         this.number = number;
     }
+
     public String getCompanyName() {
         return companyName;
     }
@@ -90,6 +93,7 @@ public class ProductQueryBean extends BaseBean {
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
+
     public String getPhone() {
         return phone;
     }
@@ -97,6 +101,7 @@ public class ProductQueryBean extends BaseBean {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     public String getEmail() {
         return email;
     }
@@ -104,6 +109,7 @@ public class ProductQueryBean extends BaseBean {
     public void setEmail(String email) {
         this.email = email;
     }
+
     public LocalDateTime getDeliveryDt() {
         return deliveryDt;
     }
@@ -111,6 +117,7 @@ public class ProductQueryBean extends BaseBean {
     public void setDeliveryDt(LocalDateTime deliveryDt) {
         this.deliveryDt = deliveryDt;
     }
+
     public String getProductName() {
         return productName;
     }
@@ -118,6 +125,7 @@ public class ProductQueryBean extends BaseBean {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
     public String getRemarks() {
         return remarks;
     }
@@ -129,15 +137,15 @@ public class ProductQueryBean extends BaseBean {
     @Override
     public String toString() {
         return "ProductQueryBean{" +
-        "companyAddr=" + companyAddr +
-        ", contacts=" + contacts +
-        ", number=" + number +
-        ", companyName=" + companyName +
-        ", phone=" + phone +
-        ", email=" + email +
-        ", deliveryDt=" + deliveryDt +
-        ", productName=" + productName +
-        ", remarks=" + remarks +
-        "}";
+                "companyAddr=" + companyAddr +
+                ", contacts=" + contacts +
+                ", number=" + number +
+                ", companyName=" + companyName +
+                ", phone=" + phone +
+                ", email=" + email +
+                ", deliveryDt=" + deliveryDt +
+                ", productName=" + productName +
+                ", remarks=" + remarks +
+                "}";
     }
 }

@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author cj
@@ -52,6 +52,7 @@ public class ContactBean extends BaseBean {
     public void setCompanyEnglistName(String companyEnglistName) {
         this.companyEnglistName = companyEnglistName;
     }
+
     public String getCompanyChinesName() {
         return companyChinesName;
     }
@@ -59,6 +60,7 @@ public class ContactBean extends BaseBean {
     public void setCompanyChinesName(String companyChinesName) {
         this.companyChinesName = companyChinesName;
     }
+
     public String getTel() {
         return tel;
     }
@@ -66,6 +68,7 @@ public class ContactBean extends BaseBean {
     public void setTel(String tel) {
         this.tel = tel;
     }
+
     public String getContactName() {
         return contactName;
     }
@@ -73,6 +76,7 @@ public class ContactBean extends BaseBean {
     public void setContactName(String contactName) {
         this.contactName = contactName;
     }
+
     public String getEmail() {
         return email;
     }

@@ -13,7 +13,7 @@ import vip.pryun.dikas.web.vo.ContactVO;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author cj

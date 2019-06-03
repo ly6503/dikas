@@ -6,7 +6,7 @@ import vip.pryun.dikas.common.enums.ModuleEnum;
 import vip.pryun.dikas.common.util.StringUtils;
 import vip.pryun.dikas.common.util.file.FileUtils;
 import vip.pryun.dikas.common.util.file.web.path.PathUtils;
-import vip.pryun.dikas.domain.ImgBean;
+import vip.pryun.dikas.persistence.dto.FileUploadDTO;
 import vip.pryun.dikas.service.biz.IFileService;
 import vip.pryun.dikas.service.consts.UploadConstant;
 
@@ -27,21 +27,26 @@ import java.util.UUID;
 @Service
 public class FileServiceImpl implements IFileService {
 
-
     @Override
-    public void upload(List<MultipartFile> files) throws IOException {
+    public List<FileUploadDTO> upload(List<MultipartFile> files) throws IOException {
         String imgDirPrefix = PathUtils.getResourcesPath(ModuleEnum.FILE.getName()) +
                 FileUtils.SEPARATOR +
                 UploadConstant.UPLOAD_PREFIX +
                 FileUtils.SEPARATOR;
 
-        List<ImgBean> imgBeans = new ArrayList<>();
+        List<FileUploadDTO> fileUploadDTOS = new ArrayList<>();
         for (MultipartFile file : files) {
-            String fileExtensionName = StringUtils.getExtensionName(file.getOriginalFilename());
-            String key = imgDirPrefix + UUID.randomUUID().toString() + "." + fileExtensionName;
-            File dstFile = new File(key);
-            file.transferTo(dstFile);
+            if (!file.isEmpty()) {
+                String fileExtensionName = StringUtils.getExtensionName(file.getOriginalFilename());
+                String key = UUID.randomUUID().toString() + "." + fileExtensionName;
+                File dstFile = new File(imgDirPrefix + key);
+                file.transferTo(dstFile);
 
+                FileUploadDTO fileUploadDTO = new FileUploadDTO(file.getOriginalFilename(), key);
+                fileUploadDTOS.add(fileUploadDTO);
+            }
         }
+
+        return fileUploadDTOS;
     }
 }

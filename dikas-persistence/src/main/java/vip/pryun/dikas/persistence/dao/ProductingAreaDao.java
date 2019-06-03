@@ -5,7 +5,7 @@ import vip.pryun.dikas.domain.ProductingAreaBean;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author cj

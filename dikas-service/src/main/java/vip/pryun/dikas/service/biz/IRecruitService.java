@@ -20,5 +20,6 @@ public interface IRecruitService extends IService<RecruitBean> {
      * @return 分页数据
      */
     IPage<RecruitBean> pageList(QueryParam param);
+
     Boolean saveRecruit(RecruitBean recruitBean);
 }

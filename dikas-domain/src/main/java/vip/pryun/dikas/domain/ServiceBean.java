@@ -32,6 +32,7 @@ public class ServiceBean extends BaseBean {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getContent() {
         return content;
     }
@@ -43,8 +44,8 @@ public class ServiceBean extends BaseBean {
     @Override
     public String toString() {
         return "ServiceBean{" +
-        "title=" + title +
-        ", content=" + content +
-        "}";
+                "title=" + title +
+                ", content=" + content +
+                "}";
     }
 }

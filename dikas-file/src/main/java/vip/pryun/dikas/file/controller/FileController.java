@@ -1,10 +1,22 @@
 package vip.pryun.dikas.file.controller;
 
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import vip.pryun.dikas.common.object.Result;
+import vip.pryun.dikas.file.vo.FileUploadResultVO;
+import vip.pryun.dikas.persistence.dto.FileUploadDTO;
 import vip.pryun.dikas.service.biz.IFileService;
+
+import javax.validation.constraints.NotEmpty;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * <p>
@@ -19,26 +31,14 @@ import vip.pryun.dikas.service.biz.IFileService;
 public class FileController extends BaseController {
 
     @Autowired
-    private IFileService imgService;
+    private IFileService fileService;
 
-    /*@PostMapping("/query")
-    @ApiOperation("获取图片")
-    public Result<List<ImgVO>> query(@Validated @RequestBody QueryParam<ImgQueryVO> queryParam) {
-        QueryWrapper<ImgBean> wrapper = WrapperUtils.getConditionWrapper(queryParam);
-        List<ImgBean> imgBeans = imgService.list(wrapper);
+    @PostMapping("/upload")
+    @ApiOperation("上传文件")
+    public Result<List<FileUploadResultVO>> upload(@RequestParam("loadfile") @ApiParam(name = "files", value = "<input>标签的name属性值") @NotEmpty List<MultipartFile> files) throws IOException {
+        List<FileUploadDTO> fileUploadDTOS = fileService.upload(files);
 
-        return newResult(imgBeans, ImgVO.class);
-    }*/
-
-    /*@PostMapping("/upload")
-    @ApiOperation("上传图片")
-    public Result<FileUploadResultVO> upload(@RequestParam("loadfile") List<MultipartFile> files) throws IOException {
-        imgService.upload(imgBean, files, new UnifyUser(1L, "hx"));
-
-
-        return Result.success();
-    }*/
-
-   
+        return newResult(fileUploadDTOS, FileUploadResultVO.class);
+    }
 
 }

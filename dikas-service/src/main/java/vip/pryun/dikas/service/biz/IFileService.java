@@ -1,6 +1,7 @@
 package vip.pryun.dikas.service.biz;
 
 import org.springframework.web.multipart.MultipartFile;
+import vip.pryun.dikas.persistence.dto.FileUploadDTO;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,5 +16,5 @@ import java.util.List;
  */
 public interface IFileService {
 
-    void upload(List<MultipartFile> files) throws IOException;
+    List<FileUploadDTO> upload(List<MultipartFile> files) throws IOException;
 }

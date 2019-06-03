@@ -25,6 +25,7 @@ public class ApplicantServiceImpl extends ServiceImpl<ApplicantDao, ApplicantBea
 
     @Autowired
     private IRecruitService jobService;
+
     @Override
     public Boolean saveApplicant(ApplicantBean applicantBean) {
         QueryWrapper<RecruitBean> queryWrapper = new QueryWrapper<>();

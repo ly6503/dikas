@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author cj
@@ -37,6 +37,7 @@ public class ProductingAreaBean extends BaseBean {
     public void setAreaAdress(String areaAdress) {
         this.areaAdress = areaAdress;
     }
+
     public String getAreaName() {
         return areaName;
     }
@@ -44,6 +45,7 @@ public class ProductingAreaBean extends BaseBean {
     public void setAreaName(String areaName) {
         this.areaName = areaName;
     }
+
     public Long getContactId() {
         return contactId;
     }
@@ -55,9 +57,9 @@ public class ProductingAreaBean extends BaseBean {
     @Override
     public String toString() {
         return "ProductingAreaBean{" +
-        "areaAdress=" + areaAdress +
-        ", areaName=" + areaName +
-        ", contactId=" + contactId +
-        "}";
+                "areaAdress=" + areaAdress +
+                ", areaName=" + areaName +
+                ", contactId=" + contactId +
+                "}";
     }
 }

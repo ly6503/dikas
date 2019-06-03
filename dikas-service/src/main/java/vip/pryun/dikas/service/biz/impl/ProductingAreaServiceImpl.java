@@ -8,7 +8,7 @@ import vip.pryun.dikas.service.biz.IProductingAreaService;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author cj

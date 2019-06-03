@@ -1,7 +1,7 @@
 package vip.pryun.dikas.persistence.dao;
 
-import vip.pryun.dikas.domain.ServiceBean;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import vip.pryun.dikas.domain.ServiceBean;
 
 /**
  * <p>

@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import vip.pryun.dikas.common.mybatis.dto.QueryParam;
 import vip.pryun.dikas.common.mybatis.utils.WrapperUtils;
 import vip.pryun.dikas.common.object.Result;
-import vip.pryun.dikas.domain.NewsBean;
 import vip.pryun.dikas.domain.ProductsBean;
 import vip.pryun.dikas.service.biz.IProductsService;
-import vip.pryun.dikas.web.vo.NewsVO;
 import vip.pryun.dikas.web.vo.ProductSeriesVO;
 import vip.pryun.dikas.web.vo.ProductsVO;
 
