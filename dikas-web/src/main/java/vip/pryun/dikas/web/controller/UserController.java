@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-05-30
  */
 @RestController
-@RequestMapping("/web/dikas/user")
+@RequestMapping("/web/user")
 public class UserController extends BaseController {
 
 }

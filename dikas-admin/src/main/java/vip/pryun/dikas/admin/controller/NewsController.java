@@ -32,7 +32,7 @@ import javax.validation.constraints.NotNull;
  * @since 2019-05-30
  */
 @RestController
-@RequestMapping("/web/dikas/news")
+@RequestMapping("/admin/news")
 @Api(tags = "新闻和动态")
 public class NewsController extends BaseController {
 

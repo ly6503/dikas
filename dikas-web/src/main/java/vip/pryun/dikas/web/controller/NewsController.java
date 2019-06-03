@@ -27,7 +27,7 @@ import vip.pryun.dikas.web.vo.NewsVO;
  * @since 2019-05-30
  */
 @RestController
-@RequestMapping("/web/dikas/news")
+@RequestMapping("/web/news")
 @Api(tags = "新闻和动态")
 public class NewsController extends BaseController {
 

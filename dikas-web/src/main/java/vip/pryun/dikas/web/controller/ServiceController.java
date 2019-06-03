@@ -23,7 +23,7 @@ import java.util.List;
  * @since 2019-05-30
  */
 @RestController
-@RequestMapping("/dikas/service")
+@RequestMapping("/web/service")
 @Api(tags = "服务支持")
 public class ServiceController extends BaseController {
 

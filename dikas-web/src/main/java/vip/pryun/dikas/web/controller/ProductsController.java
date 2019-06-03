@@ -30,7 +30,7 @@ import java.util.List;
  * @since 2019-05-30
  */
 @RestController
-@RequestMapping("/web/dikas/products")
+@RequestMapping("/web/products")
 @Api(tags = "产品")
 public class ProductsController extends BaseController {
 

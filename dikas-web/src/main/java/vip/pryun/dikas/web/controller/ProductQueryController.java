@@ -27,7 +27,7 @@ import vip.pryun.dikas.web.vo.ProductQueryVO;
  * @since 2019-05-30
  */
 @RestController
-@RequestMapping("/dikas/product_query")
+@RequestMapping("/web/product_query")
 @Api(tags = "产品查询")
 public class ProductQueryController extends BaseController {
 
