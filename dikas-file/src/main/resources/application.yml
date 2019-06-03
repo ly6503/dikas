@@ -3,6 +3,7 @@ server:
   servlet:
     context-path: /
   address: localhost
+
 spring:
   application:
     name: spring-boot-template
