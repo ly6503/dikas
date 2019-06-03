@@ -9,7 +9,7 @@ import vip.pryun.dikas.common.mybatis.dto.QueryParam;
 import vip.pryun.dikas.domain.RecruitBean;
 import vip.pryun.dikas.persistence.dao.RecruitDao;
 import vip.pryun.dikas.service.biz.IRecruitService;
-import vip.pryun.dikas.service.enums.JobStatusEnum;
+import vip.pryun.dikas.service.enums.RecruitStatusEnum;
 
 /**
  * <p>
@@ -39,7 +39,7 @@ public class RecruitServiceImpl extends ServiceImpl<RecruitDao, RecruitBean> imp
         page.setCurrent(param.getCurrent());
         page.setSize(param.getSize());
         QueryWrapper<RecruitBean> wrapper = new QueryWrapper<>();
-        wrapper.eq("recruit_status", JobStatusEnum.VACANT.value);
+        wrapper.eq("recruit_status", RecruitStatusEnum.VACANT.value);
         return page(page, wrapper);
     }
 }

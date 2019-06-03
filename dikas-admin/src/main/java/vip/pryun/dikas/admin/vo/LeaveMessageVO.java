@@ -1,20 +1,16 @@
-package vip.pryun.dikas.domain;
+package vip.pryun.dikas.admin.vo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import vip.pryun.dikas.service.enums.ApprovalStatusEnum;
+
+import java.io.Serializable;
 
 /**
- * <p>
- * 
- * </p>
- *
- * @author cjzlx
- * @since 2019-05-29
+ * @author CJ
+ * @date 2019/5/30 20:18
+ * @note
  */
-@TableName("leave_message")
-public class LeaveMessageBean extends BaseBean {
-
-    private static final long serialVersionUID = 1L;
-
+public class LeaveMessageVO implements Serializable {
+    private static final long serialVersionUID = 7688545656838676374L;
     /**
      * 联系人
      */
@@ -46,9 +42,14 @@ public class LeaveMessageBean extends BaseBean {
     private String content;
 
     /**
-     * 审批状态
+     * 审批状态（0：未审批，1：已通过，3：已拒绝）
+     * @see ApprovalStatusEnum
      */
     private Integer approvalStatus;
+
+    public LeaveMessageVO(String approvalStatus) {
+        this.approvalStatus = ApprovalStatusEnum.UNAPPROVED.value;
+    }
 
     public String getContacts() {
         return contacts;
@@ -57,6 +58,7 @@ public class LeaveMessageBean extends BaseBean {
     public void setContacts(String contacts) {
         this.contacts = contacts;
     }
+
     public String getEmail() {
         return email;
     }
@@ -64,6 +66,7 @@ public class LeaveMessageBean extends BaseBean {
     public void setEmail(String email) {
         this.email = email;
     }
+
     public String getPhone() {
         return phone;
     }
@@ -71,6 +74,7 @@ public class LeaveMessageBean extends BaseBean {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     public String getFax() {
         return fax;
     }
@@ -78,6 +82,7 @@ public class LeaveMessageBean extends BaseBean {
     public void setFax(String fax) {
         this.fax = fax;
     }
+
     public String getAdress() {
         return adress;
     }
@@ -85,6 +90,7 @@ public class LeaveMessageBean extends BaseBean {
     public void setAdress(String adress) {
         this.adress = adress;
     }
+
     public String getContent() {
         return content;
     }
@@ -93,24 +99,15 @@ public class LeaveMessageBean extends BaseBean {
         this.content = content;
     }
 
-    public Integer getApprovalStatus() {
-        return approvalStatus;
-    }
-
-    public void setApprovalStatus(Integer approvalStatus) {
-        this.approvalStatus = approvalStatus;
-    }
-
     @Override
     public String toString() {
-        return "LeaveMessageBean{" +
+        return "LeaveMessageVO{" +
                 "contacts='" + contacts + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", fax='" + fax + '\'' +
                 ", adress='" + adress + '\'' +
                 ", content='" + content + '\'' +
-                ", approvalStatus='" + approvalStatus + '\'' +
                 '}';
     }
 }

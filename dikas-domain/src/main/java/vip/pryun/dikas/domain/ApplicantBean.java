@@ -55,6 +55,11 @@ public class ApplicantBean extends BaseBean {
      */
     private String description;
 
+    /**
+     * 审批状态
+     */
+    private Integer approvalStatus;
+
     public String getApplicantName() {
         return applicantName;
     }
@@ -113,6 +118,14 @@ public class ApplicantBean extends BaseBean {
         this.applicantGender = applicantGender;
     }
 
+    public Integer getApprovalStatus() {
+        return approvalStatus;
+    }
+
+    public void setApprovalStatus(Integer approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
     @Override
     public String toString() {
         return "ApplicantBean{" +
@@ -124,6 +137,7 @@ public class ApplicantBean extends BaseBean {
                 ", education='" + education + '\'' +
                 ", jobName=" + jobName +
                 ", description='" + description + '\'' +
+                ", approvalStatus='" + approvalStatus + '\'' +
                 '}';
     }
 }

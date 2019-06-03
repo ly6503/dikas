@@ -3,6 +3,8 @@ package vip.pryun.dikas.service.biz;
 import com.baomidou.mybatisplus.extension.service.IService;
 import vip.pryun.dikas.domain.ApplicantBean;
 
+import java.util.List;
+
 /**
  * <p>
  * 求职者表 服务类
@@ -13,4 +15,5 @@ import vip.pryun.dikas.domain.ApplicantBean;
  */
 public interface IApplicantService extends IService<ApplicantBean> {
     Boolean saveApplicant(ApplicantBean applicantBean);
+    Boolean updateOrDelete(List<ApplicantBean> applicantBeans);
 }
