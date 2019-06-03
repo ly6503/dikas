@@ -29,17 +29,22 @@ public class FileServiceImpl implements IFileService {
 
     @Override
     public List<FileUploadDTO> upload(List<MultipartFile> files) throws IOException {
-        String imgDirPrefix = PathUtils.getResourcesPath(ModuleEnum.FILE.getName()) +
+        String fileDirPrefix = PathUtils.getResourcesPath(ModuleEnum.FILE.getName()) +
                 FileUtils.SEPARATOR +
                 UploadConstant.UPLOAD_PREFIX +
                 FileUtils.SEPARATOR;
+
+        File fileDir = new File(fileDirPrefix);
+        if (!fileDir.exists()) {
+            fileDir.mkdirs();
+        }
 
         List<FileUploadDTO> fileUploadDTOS = new ArrayList<>();
         for (MultipartFile file : files) {
             if (!file.isEmpty()) {
                 String fileExtensionName = StringUtils.getExtensionName(file.getOriginalFilename());
                 String key = UUID.randomUUID().toString() + "." + fileExtensionName;
-                File dstFile = new File(imgDirPrefix + key);
+                File dstFile = new File(fileDirPrefix + key);
                 file.transferTo(dstFile);
 
                 FileUploadDTO fileUploadDTO = new FileUploadDTO(file.getOriginalFilename(), key);
