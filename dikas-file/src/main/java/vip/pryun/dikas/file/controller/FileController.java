@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import vip.pryun.dikas.common.object.Result;
 import vip.pryun.dikas.file.vo.FileUploadResultVO;
 import vip.pryun.dikas.persistence.dto.FileUploadDTO;
-import vip.pryun.dikas.service.biz.IFileService;
+import vip.pryun.dikas.service.biz.impl.IFileService;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.IOException;

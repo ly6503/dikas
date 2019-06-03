@@ -7,7 +7,6 @@ import vip.pryun.dikas.common.util.StringUtils;
 import vip.pryun.dikas.common.util.file.FileUtils;
 import vip.pryun.dikas.common.util.file.web.path.PathUtils;
 import vip.pryun.dikas.persistence.dto.FileUploadDTO;
-import vip.pryun.dikas.service.biz.IFileService;
 import vip.pryun.dikas.service.consts.UploadConstant;
 
 import java.io.File;
