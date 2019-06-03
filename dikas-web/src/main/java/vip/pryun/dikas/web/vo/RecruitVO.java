@@ -7,17 +7,17 @@ import java.io.Serializable;
  * @date 2019/5/29 21:46
  * @note
  */
-public class JobVO implements Serializable {
+public class RecruitVO implements Serializable {
     private static final long serialVersionUID = -4314978094539604120L;
     /**
      * 职位名称
      */
-    private String jobName;
+    private String recruitName;
 
     /**
      * 职位状态（0：空缺，1不缺）
      */
-    private Integer jobStatus;
+    private Integer recruitStatus;
 
     /**
      * 年龄范围
@@ -27,7 +27,7 @@ public class JobVO implements Serializable {
     /**
      * 性别
      */
-    private String jobGender;
+    private String genderRange;
 
     /**
      * 专业
@@ -54,20 +54,20 @@ public class JobVO implements Serializable {
      */
     private String description;
 
-    public String getJobName() {
-        return jobName;
+    public String getRecruitName() {
+        return recruitName;
     }
 
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
+    public void setRecruitName(String recruitName) {
+        this.recruitName = recruitName;
     }
 
-    public Integer getJobStatus() {
-        return jobStatus;
+    public Integer getRecruitStatus() {
+        return recruitStatus;
     }
 
-    public void setJobStatus(Integer jobStatus) {
-        this.jobStatus = jobStatus;
+    public void setRecruitStatus(Integer recruitStatus) {
+        this.recruitStatus = recruitStatus;
     }
 
     public String getAge() {
@@ -78,12 +78,12 @@ public class JobVO implements Serializable {
         this.age = age;
     }
 
-    public String getJobGender() {
-        return jobGender;
+    public String getGenderRange() {
+        return genderRange;
     }
 
-    public void setJobGender(String jobGender) {
-        this.jobGender = jobGender;
+    public void setGenderRange(String genderRange) {
+        this.genderRange = genderRange;
     }
 
     public String getMajor() {
@@ -128,11 +128,11 @@ public class JobVO implements Serializable {
 
     @Override
     public String toString() {
-        return "JobVO{" +
-                "jobName='" + jobName + '\'' +
-                ", jobStatus=" + jobStatus +
+        return "RecruitVO{" +
+                "recruitName='" + recruitName + '\'' +
+                ", recruitStatus=" + recruitStatus +
                 ", age='" + age + '\'' +
-                ", jobGender='" + jobGender + '\'' +
+                ", genderRange='" + genderRange + '\'' +
                 ", major='" + major + '\'' +
                 ", pay='" + pay + '\'' +
                 ", needNumber=" + needNumber +

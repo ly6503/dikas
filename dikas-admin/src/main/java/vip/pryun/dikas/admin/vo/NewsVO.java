@@ -1,8 +1,5 @@
-package vip.pryun.dikas.web.vo;
+package vip.pryun.dikas.admin.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import vip.pryun.dikas.common.mybatis.annotation.property.Equal;
 import vip.pryun.dikas.common.mybatis.annotation.property.Like;

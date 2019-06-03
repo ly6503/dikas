@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 用户表 前端控制器
+ *  前端控制器
  * </p>
  *
- * @author LiuYin
+ * @author cj
  * @since 2019-05-30
  */
 @RestController
-@RequestMapping("/web/user")
-public class UserController extends BaseController {
+@RequestMapping("/dikas/producting-area-bean")
+public class ProductingAreaController extends BaseController {
 
 }

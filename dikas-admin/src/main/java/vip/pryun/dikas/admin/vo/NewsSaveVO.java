@@ -1,47 +1,44 @@
-package vip.pryun.dikas.domain;
+package vip.pryun.dikas.admin.vo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.sun.istack.internal.NotNull;
+import io.swagger.annotations.ApiModelProperty;
+import vip.pryun.dikas.common.mybatis.annotation.property.Equal;
+import vip.pryun.dikas.common.mybatis.annotation.property.Like;
+
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
- * <p>
- * 新闻和动态
- * </p>
- *
- * @author LiuYin
- * @since 2019-05-30
+ * @Author: liuyin
+ * @Date: 2019/5/30 15:17
+ * @Description:
  */
-@TableName("news")
-public class NewsBean extends BaseBean {
+public class NewsSaveVO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 类型:1新闻  2行业动态
-     */
-    private Integer type;
-
-    /**
      * 标题
      */
+    @ApiModelProperty("标题")
+    @NotBlank
     private String title;
 
     /**
      * 来源
      */
+    @ApiModelProperty("来源")
+    @NotBlank
     private String source;
 
     /**
      * 内容
      */
+    @ApiModelProperty("内容")
+    @NotBlank
     private String content;
 
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
     public String getTitle() {
         return title;
     }
@@ -49,6 +46,7 @@ public class NewsBean extends BaseBean {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getSource() {
         return source;
     }
@@ -56,21 +54,12 @@ public class NewsBean extends BaseBean {
     public void setSource(String source) {
         this.source = source;
     }
+
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    @Override
-    public String toString() {
-        return "NewsBean{" +
-        "type=" + type +
-        ", title=" + title +
-        ", source=" + source +
-        ", content=" + content +
-        "}";
     }
 }

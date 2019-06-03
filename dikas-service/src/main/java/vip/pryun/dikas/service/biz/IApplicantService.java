@@ -12,5 +12,5 @@ import vip.pryun.dikas.domain.ApplicantBean;
  * @since 2019-05-29
  */
 public interface IApplicantService extends IService<ApplicantBean> {
-
+    Boolean saveApplicant(ApplicantBean applicantBean);
 }
