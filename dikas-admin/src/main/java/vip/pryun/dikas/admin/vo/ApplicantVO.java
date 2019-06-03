@@ -1,4 +1,4 @@
-package vip.pryun.dikas.web.vo;
+package vip.pryun.dikas.admin.vo;
 
 import vip.pryun.dikas.service.enums.ApprovalStatusEnum;
 
@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @date 2019/5/30 15:01
  * @note
  */
-public class ApplicantSaveVO implements Serializable {
+public class ApplicantVO implements Serializable {
     private static final long serialVersionUID = 5461099116143693038L;
     /**
      * 应聘者姓名
@@ -53,11 +53,11 @@ public class ApplicantSaveVO implements Serializable {
 
     /**
      * 审批状态（0：未审批，1：已通过，3：已拒绝）
-     * @see vip.pryun.dikas.service.enums.ApprovalStatusEnum
+     * @see ApprovalStatusEnum
      */
     private Integer approvalStatus;
 
-    public ApplicantSaveVO(Integer approvalStatus) {
+    public ApplicantVO(Integer approvalStatus) {
         this.approvalStatus = ApprovalStatusEnum.UNAPPROVED.value;
     }
 
@@ -127,7 +127,7 @@ public class ApplicantSaveVO implements Serializable {
 
     @Override
     public String toString() {
-        return "ApplicantSaveVO{" +
+        return "ApplicantUpdateVO{" +
                 "applicantName='" + applicantName + '\'' +
                 ", applicantAge=" + applicantAge +
                 ", applicantGender=" + applicantGender +

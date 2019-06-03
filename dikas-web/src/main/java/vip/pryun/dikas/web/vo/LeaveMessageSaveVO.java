@@ -1,5 +1,7 @@
 package vip.pryun.dikas.web.vo;
 
+import vip.pryun.dikas.service.enums.ApprovalStatusEnum;
+
 import java.io.Serializable;
 
 /**
@@ -38,6 +40,16 @@ public class LeaveMessageSaveVO implements Serializable {
      * 留言内容
      */
     private String content;
+
+    /**
+     * 审批状态（0：未审批，1：已通过，3：已拒绝）
+     * @see vip.pryun.dikas.service.enums.ApprovalStatusEnum
+     */
+    private Integer approvalStatus;
+
+    public LeaveMessageSaveVO(String approvalStatus) {
+        this.approvalStatus = ApprovalStatusEnum.UNAPPROVED.value;
+    }
 
     public String getContacts() {
         return contacts;

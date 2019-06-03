@@ -6,22 +6,23 @@ import java.util.Arrays;
 
 /**
  * @author CJ
- * @date 2019/5/29 21:58
+ * @date 2019/5/31 10:16
  * @note
  */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum JobStatusEnum {
-    VACANT("空缺", 0),
-    NONVACANT("不空缺", 1);
-
+public enum ApprovalStatusEnum {
+    UNAPPROVED("未审批", 0),
+    APPROVED("通过", 0),
+    REFUSE ("拒绝", 0);
     public final String name;
     public final Integer value;
-    JobStatusEnum(String name, Integer value) {
+
+    ApprovalStatusEnum(String name, Integer value) {
         this.name = name;
         this.value = value;
     }
 
-    public static JobStatusEnum of(Integer value) {
+    public static ApprovalStatusEnum of (Integer value) {
         return Arrays.stream(values())
                 .filter(i -> i.value.equals(value))
                 .findFirst()
