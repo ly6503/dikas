@@ -1,6 +1,5 @@
 package vip.pryun.dikas.web.controller;
 
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,4 +35,5 @@ public class CompanyAbstractController extends BaseController {
         List<CompanyAbstractBean> companyAbstractBeans = companyAbstractService.list();
         return newResult(companyAbstractBeans, CompanyAbstractVO.class);
     }
+
 }

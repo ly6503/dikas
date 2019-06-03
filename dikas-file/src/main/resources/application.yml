@@ -3,7 +3,6 @@ server:
   servlet:
     context-path: /
   address: localhost
-
 spring:
   application:
     name: spring-boot-template
@@ -55,6 +54,9 @@ spring:
           log-slow-sql: true
   profiles:
     active: @env@
+  servlet:
+    multipart:
+      max-file-size: 20MB
 
 mybatis-plus:
   mapper-locations: classpath*:mappers/*.xml
