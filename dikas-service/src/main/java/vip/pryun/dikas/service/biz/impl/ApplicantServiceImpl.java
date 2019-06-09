@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vip.pryun.dikas.common.mybatis.annotation.transaction.ITransactional;
+import vip.pryun.dikas.common.object.UnifyUser;
+import vip.pryun.dikas.common.util.bean.BeanUtils;
 import vip.pryun.dikas.domain.ApplicantBean;
 import vip.pryun.dikas.domain.RecruitBean;
 import vip.pryun.dikas.persistence.dao.ApplicantDao;
@@ -31,29 +33,35 @@ import static com.google.common.collect.Lists.newArrayList;
 public class ApplicantServiceImpl extends ServiceImpl<ApplicantDao, ApplicantBean> implements IApplicantService {
 
     @Autowired
-    private IRecruitService jobService;
+    private IRecruitService recruitService;
 
     @ITransactional
     @Override
     public Boolean saveApplicant(ApplicantBean applicantBean) {
         QueryWrapper<RecruitBean> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("recruit_name", applicantBean.getJobName());
-        RecruitBean job = jobService.getOne(queryWrapper);
+        RecruitBean job = recruitService.getOne(queryWrapper);
+        
         UpdateWrapper<RecruitBean> uwp = new UpdateWrapper<>();
+        BeanUtils.addUpdateInfo(job, new UnifyUser(0L, "robot"));
         if (job.getNeedNumber() == 0) {
             uwp.set("recruit_status", RecruitStatusEnum.NONVACANT.value);
-            return jobService.update(uwp);
+            return recruitService.update(job,uwp);
         } else {
             uwp.set("need_number", job.getNeedNumber() - 1);
         }
-        boolean update = jobService.update(uwp);
-        boolean save = save(applicantBean);
-        if (!save && update) {
-            uwp = new UpdateWrapper<>();
-            uwp.set("need_number", job.getNeedNumber() - 1);
-            update = jobService.update(uwp);
+        boolean update = recruitService.update(job,uwp);
+        if (update) {
+            BeanUtils.addEntryInfo(applicantBean, new UnifyUser(0L, "robot"));
+            boolean save = save(applicantBean);
+            if (!save) {
+                uwp = new UpdateWrapper<>();
+                uwp.set("need_number", job.getNeedNumber() - 1);
+                update = recruitService.update(uwp);
+            }
+            return save && update;
         }
-        return save && update;
+        return false;
     }
 
     @Override
@@ -68,6 +76,7 @@ public class ApplicantServiceImpl extends ServiceImpl<ApplicantDao, ApplicantBea
                         delList.add(applicantBean.getId());
                     } else {
                         //更新逻辑
+                        BeanUtils.addUpdateInfo(applicantBean, new UnifyUser(0L, "robot"));
                         updateList.add(applicantBean);
                     }
                 });

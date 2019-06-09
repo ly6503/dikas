@@ -5,3 +5,17 @@ spring:
       password: 1
   profiles:
     include: swagger
+
+    #Mail配置
+  mail:
+    host: smtp.qq.com
+    username: 2860143753@qq.com #发件人邮箱
+    password: hgnvxfbbvqzxddcc #smtp授权码
+    default-encoding: UTF-8
+    subject: Dikas
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enabled: true

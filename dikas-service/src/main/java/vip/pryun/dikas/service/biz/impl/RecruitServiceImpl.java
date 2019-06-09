@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import vip.pryun.dikas.common.mybatis.dto.QueryParam;
+import vip.pryun.dikas.common.object.UnifyUser;
+import vip.pryun.dikas.common.util.bean.BeanUtils;
 import vip.pryun.dikas.domain.RecruitBean;
 import vip.pryun.dikas.persistence.dao.RecruitDao;
 import vip.pryun.dikas.service.biz.IRecruitService;
@@ -30,6 +32,7 @@ public class RecruitServiceImpl extends ServiceImpl<RecruitDao, RecruitBean> imp
         if (one != null) {
             return false;
         }
+        BeanUtils.addEntryInfo(recruitBean, new UnifyUser(0L, "robot"));
         return save(recruitBean);
     }
 

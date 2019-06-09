@@ -37,6 +37,6 @@ public class LeaveMessageController extends BaseController {
     @ApiOperation(value = "添加留言信息", notes = "添加留言信息")
     public Result addLeaveMessage(@RequestBody LeaveMessageSaveVO saveVO) {
         LeaveMessageBean messageBean = BeanMapper.map(saveVO, LeaveMessageBean.class);
-        return newResult(leaveMessageService.save(messageBean), Msg.F00004);
+        return newResult(leaveMessageService.saveMessage(messageBean), Msg.F00004);
     }
 }
